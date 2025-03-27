@@ -141,11 +141,11 @@ const AuthForm = ({ type }) => {
                         <Button type="submit" className="btn">{type === "sign-in" ? "Sign in" : "Create an account"}</Button>
                     </form>
                 </Form>
-                <div className="flex justify-center gap-2">
-                    <p >{type === "sign-in" ? "Don't have an account?" : "Already have an account?"}
+                <div className="flex max-sm:flex-col items-center justify-center gap-2">
+                    <p className="max-sm:text-sm" >{type === "sign-in" ? "Don't have an account?" : "Already have an account?"}
                     </p>
                     <Link href={type === "sign-in" ? "/sign-up" : "/sign-in"}>
-                        <p className="text-cyan-400  font-bold ">{type === "sign-in" ? "Sign Up" : "Sign In"}
+                        <p className="text-cyan-400  font-bold max-sm:text-base ">{type === "sign-in" ? "Sign Up" : "Sign In"}
                         </p></Link>
                 </div>
             </div>
