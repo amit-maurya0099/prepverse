@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/public\prepverse-2e407-firebase-adminsdk-fbsvc-84c2d6dc0d.json
 /.pnp
 .pnp.*
 .yarn/*
