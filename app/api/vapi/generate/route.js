@@ -4,13 +4,13 @@ import { google } from "@ai-sdk/google";
 import { generateText } from "ai";
 
 export async function GET(){
-    return Response.json({success:true, data:"Thank You"},{status:200});
+    return Response.json({success:true, data:"Thank You!"},{status:200});
 } 
 
 export async function POST(request){
-      
+        console.log("hello from post")
     const {type,role,techstack,level,amount,userid}=await request.json();
-    
+         console.log(type,role,techstack,level,amount,userid);
     try {
         const { text: questions} = await generateText({
             model: google("gemini-2.0-flash-001",{
@@ -30,7 +30,7 @@ export async function POST(request){
               Thank you! <3
           `,
           });
-
+      
 
           const interview={
             role,type,level,

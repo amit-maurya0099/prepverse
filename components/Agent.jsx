@@ -14,9 +14,7 @@ const CallStatus = {
 };
 
 
- const messages=[
-  ""
- ];
+ 
 
 
 
@@ -84,7 +82,7 @@ const Agent = ({userName,userId,type}) => {
     const latestMessage=messages[messages.length -1]?.content;
     const isCallInactiveOrFinished=(callStatus)=>callStatus === CallStatus.INACTIVE || callStatus === CallStatus.FINISHED;
 
-    console.log(messages);
+   
   return (
     <>
   
