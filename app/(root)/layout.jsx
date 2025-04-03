@@ -1,11 +1,14 @@
-import { isAuthenticated } from '@/lib/actions/auth.action'
+
+import { isAuthenticated, signOut } from '@/lib/actions/auth.action'
 import { redirect } from 'next/navigation';
+
 import React from 'react'
 
 const Rootlayout =async ({children}) => {
 
   const isUserAuthenticated= await isAuthenticated();
-  if(!isAuthenticated) redirect("/sign-in");
+  if(!isUserAuthenticated) redirect('/sign-in')
+  
   return (
     <div className='root-layout  top-0 '>
     <nav className='flex justify-between items-center h-10' >
@@ -18,4 +21,4 @@ const Rootlayout =async ({children}) => {
   )
 }
 
-export default Rootlayout
+export default Rootlayout;
