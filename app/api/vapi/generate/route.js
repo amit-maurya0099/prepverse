@@ -8,7 +8,7 @@ export async function GET(){
 } 
 
 export async function POST(request){
-        console.log("hello from post")
+      
     const {type,role,techstack,level,amount,userid}=await request.json();
          console.log(type,role,techstack,level,amount,userid);
         
@@ -29,8 +29,7 @@ export async function POST(request){
           Thank you! <3
       `,
       });
-      console.log("after prompt")
-  
+      
       const interview = {
         role: role,
         type: type,
@@ -42,10 +41,9 @@ export async function POST(request){
         coverImage: getRandomInterviewCover(),
         createdAt: new Date().toISOString(),
       };
-      console.log(interview);
-  
+     
       await db.collection("interviews").add(interview);
-      console.log("interview has been generated successfully")
+      
       return Response.json({ success: true }, { status: 200 });
     } catch (error) {
       console.error("Error:", error);
