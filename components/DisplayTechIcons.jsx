@@ -3,7 +3,9 @@ import Image from 'next/image'
 import React from 'react'
 
 const DisplayTechIcons = async({techStack}) => {
-    const  techIcons=await getTechLogos(techStack)
+ 
+    const  techIcons=await getTechLogos(techStack);
+      
   return (
     <div className='flex  '>
        {techIcons.slice(0,3).map(({tech,url},index)=>{

@@ -6,7 +6,7 @@ import Link from "next/link";
 import DisplayTechIcons from "./DisplayTechIcons";
 
 const InterviewCard = ({data}) => {
-    
+      
     const feedback = null;
      const normalizedType = /mix/gi.test(data?.type) ? "Mixed" : data.type;
      const formattedDate = dayjs(feedback?.createdAt || data?.createdAt || dayjs(Date.now())).format('MMM D, YYYY');
