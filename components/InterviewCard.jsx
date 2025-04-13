@@ -44,7 +44,7 @@ const InterviewCard = async({data}) => {
         <div className="flex justify-between items-center border-t border-gray-500 pt-5">
             <DisplayTechIcons techStack={data?.techstack}/>
              <Button className="btn-primary">
-                <Link href={feedback?`/interview/${data.id}/feedback` : `/interview/${data.id}`}>
+                <Link href={feedback?`/interview/${data.id}/feedback` : `/interview/${data.id}`} prefetch={true}>
                  {feedback? "Check Feedback":"View Interview"}
                 </Link>
              </Button>
