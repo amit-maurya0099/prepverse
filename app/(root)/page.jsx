@@ -16,7 +16,7 @@ const Page = async() => {
     await getLatestInterviews({userId:user?.id})
   ])
   
-   
+  
   const prevInterviews= userInterviews?.length > 0;
   const hasUpcomingInterviews= latestInterviews?.length > 0;
  

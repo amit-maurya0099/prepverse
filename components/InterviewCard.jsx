@@ -12,7 +12,7 @@ const InterviewCard = async({data}) => {
         const userId=data?.userId;
 
         const feedback=(data?.id && data?.userId) ? await getFeedbackByInterviewId({interviewId,userId}) :null;
-
+          
     
      const normalizedType = /mix/gi.test(data?.type) ? "Mixed" : data.type;
      const formattedDate = dayjs(feedback?.createdAt || data?.createdAt || dayjs(Date.now())).format('MMM D, YYYY');
@@ -24,7 +24,9 @@ const InterviewCard = async({data}) => {
         <div >
             <div className="absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg bg-light-600">
                 <p className="badge-text">{normalizedType}</p>
+
             </div>
+            
             <Image src={randomInterviewCovers()} alt="cover-image" width={60}  height={60}className="rounded-full object-fit " />
             <h3 className="mt-5 capitalize text-lg">{data.role} Interview</h3>
             <div className="flex gap-5 ">
