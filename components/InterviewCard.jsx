@@ -4,10 +4,16 @@ import { randomInterviewCovers } from "@/lib/utils";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import DisplayTechIcons from "./DisplayTechIcons";
+import { getFeedbackByInterviewId } from "@/lib/actions/genral.action";
 
-const InterviewCard = ({data}) => {
-      
-    const feedback = null;
+const InterviewCard = async({data}) => {
+       
+        const interviewId=data?.id;
+        const userId=data?.userId;
+
+        const feedback=(data?.id && data?.userId) ? await getFeedbackByInterviewId({interviewId,userId}) :null;
+
+    
      const normalizedType = /mix/gi.test(data?.type) ? "Mixed" : data.type;
      const formattedDate = dayjs(feedback?.createdAt || data?.createdAt || dayjs(Date.now())).format('MMM D, YYYY');
      
